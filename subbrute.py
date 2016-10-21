@@ -724,6 +724,7 @@ def run(target, query_type = "ANY", subdomains = "names.txt", resolve_list = Fal
     #We no longer require name servers.
     try:
         killproc(pid = verify_nameservers_proc.pid)
+        reep.terminate()
     except:
         #Windows threading.tread
         verify_nameservers_proc.end()
